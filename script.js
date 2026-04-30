@@ -62,7 +62,11 @@ const translations = {
     footer: {
       top: "Наверх",
     },
-    toast: "Спасибо! Заявка сохранена на странице. Подключите форму к CRM или мессенджеру перед запуском.",
+    toast: {
+      sending: "Отправляем заявку...",
+      success: "Спасибо! Заявка отправлена. Мы скоро свяжемся с вами.",
+      error: "Не получилось отправить заявку. Попробуйте еще раз или напишите нам напрямую.",
+    },
     features: [
       {
         icon: "spark",
@@ -204,7 +208,11 @@ const translations = {
     footer: {
       top: "Жогору",
     },
-    toast: "Рахмат! Өтүнмө баракта сакталды. Ишке киргизүүдөн мурун форманы CRM же мессенджерге туташтырыңыз.",
+    toast: {
+      sending: "Өтүнмө жөнөтүлүп жатат...",
+      success: "Рахмат! Өтүнмө жөнөтүлдү. Жакында сиз менен байланышабыз.",
+      error: "Өтүнмө жөнөтүлгөн жок. Кайра аракет кылыңыз же бизге түз жазыңыз.",
+    },
     features: [
       {
         icon: "spark",
@@ -463,13 +471,47 @@ document.querySelectorAll("[data-lang]").forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-document.querySelector("[data-lead-form]").addEventListener("submit", (event) => {
-  event.preventDefault();
-  event.currentTarget.reset();
+let toastTimer;
+function showToast(message) {
   const toast = document.querySelector("[data-toast]");
-  toast.textContent = translations[state.lang].toast;
+  window.clearTimeout(toastTimer);
+  toast.textContent = message;
   toast.classList.add("is-visible");
-  window.setTimeout(() => toast.classList.remove("is-visible"), 4200);
+  toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 4200);
+}
+
+document.querySelector("[data-lead-form]").addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const submitButton = form.querySelector("button[type='submit']");
+  const dictionary = translations[state.lang];
+  const formData = new FormData(form);
+
+  formData.append("language", state.lang);
+  formData.append("source", window.location.href);
+
+  submitButton.disabled = true;
+  showToast(dictionary.toast.sending);
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/iliyarmidinov11@gmail.com", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: formData,
+    });
+
+    if (!response.ok) throw new Error("Lead form submission failed");
+
+    form.reset();
+    showToast(dictionary.toast.success);
+  } catch (error) {
+    showToast(dictionary.toast.error);
+  } finally {
+    submitButton.disabled = false;
+  }
 });
 
 setLanguage(state.lang);
