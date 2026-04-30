@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Информационный сайт о компактном степпере для домашних тренировок на русском и кыргызском языках."
+    />
+    <title>Aizhigit Stepper</title>
+    <link rel="preload" as="image" href="assets/stepper-hero.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Aizhigit Stepper">
+        <span class="brand-mark">AS</span>
+        <span>Aizhigit Stepper</span>
+      </a>
+
+      <nav class="nav" data-nav aria-label="Main navigation">
+        <a href="#benefits" data-i18n="nav.benefits">Преимущества</a>
+        <a href="#routine" data-i18n="nav.routine">Тренировки</a>
+        <a href="#specs" data-i18n="nav.specs">Характеристики</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn is-active" type="button" data-lang="ru">RU</button>
+          <button class="lang-btn" type="button" data-lang="ky">KY</button>
+        </div>
+        <button class="menu-btn" type="button" data-menu aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-band">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Компактный тренажер для дома</p>
+          <h1 data-i18n="hero.title">Движение для ног и ягодиц без спортзала</h1>
+          <p class="hero-text" data-i18n="hero.text">
+            Степпер помогает добавить кардио и мягкую нагрузку в ежедневный ритм:
+            дома, в офисе или после прогулки. Минимум места, спокойный дизайн и
+            понятная механика.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#lead" data-i18n="hero.primary">Получить консультацию</a>
+            <a class="btn btn-ghost" href="#benefits" data-i18n="hero.secondary">Посмотреть преимущества</a>
+          </div>
+          <div class="hero-stats" aria-label="Product highlights">
+            <div>
+              <strong>15</strong>
+              <span data-i18n="hero.stat1">минут в день</span>
+            </div>
+            <div>
+              <strong>4.8</strong>
+              <span data-i18n="hero.stat2">оценка клиентов</span>
+            </div>
+            <div>
+              <strong>360</strong>
+              <span data-i18n="hero.stat3">движение корпуса</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media reveal">
+          <img src="assets/stepper-hero.png" alt="" />
+          <div class="floating-card card-top">
+            <span data-i18n="hero.badge1">Тихий ход</span>
+          </div>
+          <div class="floating-card card-bottom">
+            <span data-i18n="hero.badge2">Для небольших квартир</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro section-wrap reveal" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow" data-i18n="intro.eyebrow">Почему это удобно</p>
+          <h2 id="intro-title" data-i18n="intro.title">Мини-тренировка, которую проще встроить в день</h2>
+        </div>
+        <p data-i18n="intro.text">
+          Степпер не требует отдельной комнаты и сложной подготовки. Его можно
+          использовать для разминки, короткого кардио или спокойной вечерней
+          активности, когда хочется подвигаться без прыжков и лишнего шума.
+        </p>
+      </section>
+
+      <section id="benefits" class="section-wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="benefits.eyebrow">Преимущества</p>
+          <h2 data-i18n="benefits.title">Продумано для домашних тренировок</h2>
+        </div>
+        <div class="feature-grid" data-feature-grid></div>
+      </section>
+
+      <section id="routine" class="routine section-band">
+        <div class="routine-copy reveal">
+          <p class="eyebrow" data-i18n="routine.eyebrow">Как использовать</p>
+          <h2 data-i18n="routine.title">Три сценария на каждый день</h2>
+          <p data-i18n="routine.text">
+            Выберите темп под свое состояние: короткая разминка утром, активная
+            пауза днем или спокойное кардио вечером. Начинайте с малого и
+            постепенно увеличивайте время.
+          </p>
+        </div>
+        <div class="timeline" data-routine-list></div>
+      </section>
+
+      <section id="specs" class="section-wrap specs">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="specs.eyebrow">Детали</p>
+          <h2 data-i18n="specs.title">Характеристики, которые важны в быту</h2>
+        </div>
+        <div class="spec-layout">
+          <div class="spec-panel reveal">
+            <div class="spec-meter">
+              <span data-i18n="specs.meterTitle">Компактность</span>
+              <div class="meter-track"><span></span></div>
+            </div>
+            <p data-i18n="specs.panelText">
+              Небольшой формат позволяет хранить тренажер рядом с рабочим
+              столом, диваном или в гардеробной. Устойчивые опоры помогают
+              чувствовать контроль во время движения.
+            </p>
+          </div>
+          <div class="spec-list" data-spec-list></div>
+        </div>
+      </section>
+
+      <section class="comparison section-wrap reveal">
+        <div>
+          <p class="eyebrow" data-i18n="comparison.eyebrow">Сравнение</p>
+          <h2 data-i18n="comparison.title">Чем отличается от обычной кардио-нагрузки</h2>
+        </div>
+        <div class="compare-table" data-compare-table></div>
+      </section>
+
+      <section id="faq" class="section-wrap faq">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="faq.eyebrow">Вопросы</p>
+          <h2 data-i18n="faq.title">Коротко о главном</h2>
+        </div>
+        <div class="faq-list" data-faq-list></div>
+      </section>
+
+      <section id="lead" class="lead section-band reveal">
+        <div class="lead-copy">
+          <p class="eyebrow" data-i18n="lead.eyebrow">Заявка</p>
+          <h2 data-i18n="lead.title">Хотите узнать наличие и условия?</h2>
+          <p data-i18n="lead.text">
+            Оставьте контакты, и менеджер расскажет о комплектации, доставке и
+            поможет подобрать подходящий вариант.
+          </p>
+        </div>
+        <form class="lead-form" data-lead-form>
+          <label>
+            <span data-i18n="form.name">Имя</span>
+            <input type="text" name="name" autocomplete="name" required data-i18n-placeholder="form.namePlaceholder" />
+          </label>
+          <label>
+            <span data-i18n="form.phone">Телефон</span>
+            <input type="tel" name="phone" autocomplete="tel" required data-i18n-placeholder="form.phonePlaceholder" />
+          </label>
+          <button class="btn btn-primary" type="submit" data-i18n="form.submit">Отправить заявку</button>
+          <p class="form-note" data-i18n="form.note">
+            Нажимая кнопку, вы соглашаетесь на обратную связь по указанному номеру.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Aizhigit Stepper</p>
+      <a href="#top" data-i18n="footer.top">Наверх</a>
+    </footer>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
